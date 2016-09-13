@@ -20,7 +20,6 @@ function draw() {
   mapX = map(mouseX, 0, width, -5,5);
   mapY = map(mouseY, 0, height,-5,5);
   
-  
   //antena
   strokeWeight (1);
   stroke (255);
@@ -28,13 +27,36 @@ function draw() {
   strokeWeight (1);
   stroke (0);
   ellipse(centerX,110,25,25);
-  fill (255);
-  ellipse(centerX,110,20,20);
   fill (100);
+ 
   rectMode(CENTER)
   rect(centerX,125,15,5,5,5,5,5);
   rect(centerX,125+5,20,5,5,5,5,5);
   rect(centerX,125+10,25,5,5,5,5,5);
+
+  if(mouseY < centerY){
+  fill(0, 0, 255);
+  }
+  if(mouseY > centerY){
+  fill(255, 0, 0);
+  }
+  if(mouseY == centerY){
+  fill(0, 255, 0);
+  }
+  if(mouseX < centerX){
+  fill(255, 0, 255);
+  }
+  if(mouseX > centerX){
+  fill(0, 0, 255);
+  }
+  if(mouseX == centerX){
+  fill(0, 0,255);
+  }
+  
+  
+  // Bulb
+  ellipse(centerX, centerY - 140,20,20);//this is bulb
+  fill (0)
   
   //face
   strokeWeight (1);
@@ -42,7 +64,7 @@ function draw() {
   fill (255,0,0);
   rect(centerX,188,100,90,5,5,5,5);
   rect(centerX,140,100,5,5,5,5,5);
-  
+
   //eyebrow
   strokeWeight (1);
   stroke (0);
@@ -53,7 +75,7 @@ function draw() {
   //eyes
   fill (50);
   ellipse(eyesX,eyesY,30,30);
-  ellipse(eyesX+40,eyesY,30,30);
+  ellipse(eyesX + 40,eyesY,30,30);
   
   //pupils
   fill (255,204,0)
